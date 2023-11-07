@@ -15,7 +15,6 @@ import { ClientesService } from './services/clientes.service';
 import { MarcasService } from './services/marcas.service';
 import { ModelosService } from './services/modelos.service';
 import { CarrosComponent } from './components/carros/carros.component';
-import { RafaelComponent } from './rafael/rafael.component';
 import { JogosComponent } from './components/jogos/jogos.component';
 
 @NgModule({
@@ -25,7 +24,6 @@ import { JogosComponent } from './components/jogos/jogos.component';
     ModelosComponent,
     ClientesComponent,
     CarrosComponent,
-    RafaelComponent,
     JogosComponent
   ],
   imports: [
