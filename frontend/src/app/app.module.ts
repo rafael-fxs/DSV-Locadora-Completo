@@ -17,6 +17,9 @@ import { ModelosService } from './services/modelos.service';
 import { CarrosComponent } from './components/carros/carros.component';
 import { JogosComponent } from './components/jogos/jogos.component';
 import { AvaliacaoComponent } from './components/avaliacao/avaliacao.component';
+import { MatSliderModule } from '@angular/material/slider';
+import { FormsModule } from '@angular/forms';  
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { AvaliacaoComponent } from './components/avaliacao/avaliacao.component';
     HttpClientModule,
     ReactiveFormsModule,
     ModalModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    MatSliderModule,
+    MatInputModule
   ],
   providers: [
     HttpClientModule,

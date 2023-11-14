@@ -1,39 +1,58 @@
 <div class="container p-5">
-    <div class="row">
-      <div
-        class="col-6 border border-light rounded p-5 shadow" *ngIf="formulario">
-        <h6>{{ tituloFormulario }}</h6>
-        <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()">
-          <div class="form-group">
-            <label>clienteId</label>
-            <input type="text" class="form-control form-control-sm" formControlName="clienteId"/>
-          </div>
-          <div class="form-group">
-            <label>classificacao</label>
-            <input type="text" class="form-control form-control-sm" formControlName="classificacao"/>
-          </div>
-          <div class="form-group">
-            <label>comentario</label>
-            <input type="text" class="form-control form-control-sm" formControlName="comentario"/>
-          </div>
-          <div class="form-group">
-            <label>pedidoId</label>
-            <input type="text" class="form-control form-control-sm" formControlName="pedidoId"/>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div>
-                <button type="submit" class="btn btn-sm btn-outline-secondary">
-                  Salvar
-                </button>
-              </div>
-              <div class="pl-1">
-                <button type="button" class="btn btn-sm btn-light">Voltar</button>
-              </div>
+  <div class="row d-flex justify-content-center">
+    <div
+      class="col-8 border border-light rounded p-5 shadow"
+      *ngIf="formulario"
+    >
+      <h2 style="font-weight: 800">{{ tituloFormulario }}</h2>
+      <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()">
+        <div class="form-group">
+          <label>clienteId</label>
+          <input
+            type="text"
+            class="form-control form-control-sm"
+            formControlName="clienteId"
+          />
+        </div>
+        <div class="d-flex align-items-center">
+        <mat-label class="mr-3">Classificação</mat-label>
+            <mat-slider
+            step="1"
+            min="0"
+            max="5"
+            showTickMarks="true"
+            discrete
+            class="w-100"
+            >
+                
+                <input matSliderThumb formControlName="classificacao">
+            </mat-slider>
+        </div>
+        <mat-form-field class="w-100">
+            <mat-label>Comentário</mat-label>
+            <textarea formControlName="comentario" matInput></textarea>
+        </mat-form-field>
+        <div class="form-group">
+          <label>pedidoId</label>
+          <input
+            type="text"
+            class="form-control form-control-sm"
+            formControlName="pedidoId"
+          />
+        </div>
+        <div class="container">
+          <div class="row">
+            <div>
+              <button type="submit" class="btn btn-sm btn-outline-secondary">
+                Salvar
+              </button>
+            </div>
+            <div class="pl-1">
+              <button type="button" class="btn btn-sm btn-light">Voltar</button>
             </div>
           </div>
-        </form>
-      </div>
+        </div>
+      </form>
     </div>
   </div>
-  
+</div>
