@@ -1,4 +1,4 @@
-export class Filmes {
+export class Jogos {
     titulo: string = '';
     descricao: string = '';
     genero: string = '';
