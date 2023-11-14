@@ -16,6 +16,10 @@ import { MarcasService } from './services/marcas.service';
 import { ModelosService } from './services/modelos.service';
 import { CarrosComponent } from './components/carros/carros.component';
 import { JogosComponent } from './components/jogos/jogos.component';
+import { JogosService } from './services/modelos.service';
+import { FilmesComponent } from './components/filmes/filmes.component';
+import { FilmesService } from './services/modelos.service';
+import { AvaliacaoComponent } from './components/avaliacao/avaliacao.component';
 import { AvaliacaoComponent } from './components/avaliacao/avaliacao.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { FormsModule } from '@angular/forms';  
@@ -29,6 +33,7 @@ import { MatInputModule } from '@angular/material/input';
     ClientesComponent,
     CarrosComponent,
     JogosComponent,
+    FilmesComponent,
     AvaliacaoComponent
   ],
   imports: [
@@ -48,6 +53,8 @@ import { MatInputModule } from '@angular/material/input';
     MarcasService,
     ModelosService,
     ClientesService,
+    JogosService,
+    FilmesService,
     CarrosService
   ],
   bootstrap: [AppComponent]
