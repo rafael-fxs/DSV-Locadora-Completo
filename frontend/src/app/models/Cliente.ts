@@ -1,4 +1,7 @@
 export class Cliente {
-    cpf: string = '';
+    id: number = 0;
     nome: string = '';
+    telefone: string = '';
+    cpf: string = '';
+    email?: string ='';
 }

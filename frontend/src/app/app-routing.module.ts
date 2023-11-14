@@ -7,6 +7,7 @@ import { ModelosComponent } from './components/modelos/modelos.component';
 import { JogosComponent } from './components/jogos/jogos.component';
 import { FilmesComponent } from './component/Filmes/Filmes.component';
 import { AvaliacaoComponent } from './components/avaliacao/avaliacao.component';
+import { FuncionariosComponent } from './components/funcionarios/funcionarios.component';
 
 const routes: Routes = [
   { path: 'marcas', component: MarcasComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'carros', component: CarrosComponent },
   { path: 'jogos', component: JogosComponent },
   { path: 'filmes', component: FilmesComponent },
+  { path: 'funcionarios', component: FuncionariosComponent}
   { path: 'avaliacao', component: AvaliacaoComponent },
 ];
 

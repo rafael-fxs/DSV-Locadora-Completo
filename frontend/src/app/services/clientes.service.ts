@@ -18,8 +18,8 @@ export class ClientesService {
     const url = `${this.apiUrl}/listar`;
     return this.http.get<Cliente[]>(url);
   }
-  buscar(cpf: string): Observable<Cliente> {
-    const url = `${this.apiUrl}/buscar/${cpf}`;
+  buscar(id: string): Observable<Cliente> {
+    const url = `${this.apiUrl}/buscar/${id}`;
     return this.http.get<Cliente>(url);
   }
   cadastrar(cliente: Cliente): Observable<any> {
@@ -30,8 +30,8 @@ export class ClientesService {
     const url = `${this.apiUrl}/alterar`;
     return this.http.put<any>(url, cliente, httpOptions);
   }
-  excluir(cpf: string): Observable<any> {
-    const url = `${this.apiUrl}/excluir/${cpf}`;
+  excluir(id: string): Observable<any> {
+    const url = `${this.apiUrl}/excluir/${id}`;
     return this.http.delete<any>(url, httpOptions);
   }
 }
