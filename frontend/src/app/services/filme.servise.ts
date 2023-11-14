@@ -21,7 +21,7 @@ export class FilmeServiceService {
   }
 
   buscar(titulo: string): Observable<Filmes> {
-    const url = `${this.apiUrl}/buscar/${id}`;
+    const url = `${this.apiUrl}/buscar/${titulo}`;
     return this.http.get<Filmes>(url);
   }
 

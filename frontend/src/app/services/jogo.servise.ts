@@ -21,7 +21,7 @@ export class JogoServiceService {
   }
 
   buscar(titulo: string): Observable<Jogo> {
-    const url = `${this.apiUrl}/buscar/${id}`;
+    const url = `${this.apiUrl}/buscar/${titulo}`;
     return this.http.get<Jogo>(url);
   }
 
