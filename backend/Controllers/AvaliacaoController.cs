@@ -84,31 +84,6 @@ public class AvaliacaoController : ControllerBase
         return Ok();
     }
 
-    [HttpPatch()]
-    [Route("mudarComentario/{id}")]
-    public async Task<ActionResult> MudarComentario(int id, [FromForm] string comentario)
-    {
-        if (_dbContext is null) return NotFound();
-        if (_dbContext.Avaliacao is null) return NotFound();
-        var avaliacaoTemp = await _dbContext.Avaliacao.FindAsync(id);
-        if (avaliacaoTemp is null) return NotFound();
-        avaliacaoTemp.Comentario = comentario;
-        await _dbContext.SaveChangesAsync();
-        return Ok();
-    }
-
-    [HttpPatch()]
-    [Route("mudarClassificacao/{id}")]
-    public async Task<ActionResult> MudarClassificacao(int id, [FromForm] int classificacao)
-    {
-        if (_dbContext is null) return NotFound();
-        if (_dbContext.Avaliacao is null) return NotFound();
-        var avaliacaoTemp = await _dbContext.Avaliacao.FindAsync(id);
-        if (avaliacaoTemp is null) return NotFound();
-        avaliacaoTemp.Classificacao = classificacao;
-        await _dbContext.SaveChangesAsync();
-        return Ok();
-    }
 
     [HttpDelete()]
     [Route("excluir/{id}")]

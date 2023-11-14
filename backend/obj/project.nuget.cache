@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "uOQsHgUWtnG2JU7N6G5dNsJhazcxjvhrN96eBmM5ZWbZnO2/uOHhXuV+X9A0V9+8n/tS+wqwQm0d47CprXKYsQ==",
+  "dgSpecHash": "e3mvYRlw4fuVwWZ2kJf57deWfRi/VUGRfIcvQ0zQAkfBOugPtRqcDsGoAo7u71aqVlPBY3cOhd42tFYHt8gzng==",
   "success": true,
   "projectFilePath": "C:\\Users\\rafaloke\\Desktop\\DSV - Locadora\\backend\\Locadora.csproj",
   "expectedPackageFiles": [
@@ -12,7 +12,6 @@
     "C:\\Users\\rafaloke\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.11\\microsoft.entityframeworkcore.abstractions.7.0.11.nupkg.sha512",
     "C:\\Users\\rafaloke\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.11\\microsoft.entityframeworkcore.analyzers.7.0.11.nupkg.sha512",
     "C:\\Users\\rafaloke\\.nuget\\packages\\microsoft.entityframeworkcore.design\\7.0.11\\microsoft.entityframeworkcore.design.7.0.11.nupkg.sha512",
-    "C:\\Users\\rafaloke\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\7.0.11\\microsoft.entityframeworkcore.inmemory.7.0.11.nupkg.sha512",
     "C:\\Users\\rafaloke\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.11\\microsoft.entityframeworkcore.relational.7.0.11.nupkg.sha512",
     "C:\\Users\\rafaloke\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite\\7.0.11\\microsoft.entityframeworkcore.sqlite.7.0.11.nupkg.sha512",
     "C:\\Users\\rafaloke\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite.core\\7.0.11\\microsoft.entityframeworkcore.sqlite.core.7.0.11.nupkg.sha512",

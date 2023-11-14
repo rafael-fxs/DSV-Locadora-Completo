@@ -18,10 +18,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseCors(opcoes => opcoes.AllowAnyOrigin().AllowAnyHeader());
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();
 
