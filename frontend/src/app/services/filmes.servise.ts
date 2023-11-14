@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Jogo } from '../models/Jogos';
+import { Filmes } from '../models/Filmes';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type' : 'application/json'
@@ -11,28 +11,28 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class JogoServiceService {
-  apiUrl = 'http://localhost:5000/Jogos';
+export class FilmesServiceService {
+  apiUrl = 'http://localhost:5000/Filmes';
   constructor(private http: HttpClient) { }
 
-  listar(): Observable<Jogo[]> {
+  listar(): Observable<Filmes[]> {
     const url = `${this.apiUrl}/listar`;
     return this.http.get<[]>(url);
   }
 
-  buscar(titulo: string): Observable<Jogo> {
+  buscar(titulo: string): Observable<Filmes> {
     const url = `${this.apiUrl}/buscar/${titulo}`;
-    return this.http.get<Jogo>(url);
+    return this.http.get<Filmes>(url);
   }
 
-  cadastrar(Jogo: Jogo): Observable<any> {
+  cadastrar(Filmes: Filmes): Observable<any> {
     const url = `${this.apiUrl}/cadastrar`;
-    return this.http.post<Jogo>(url, Jogo, httpOptions);
+    return this.http.post<Filmes>(url, Filmes, httpOptions);
   }
 
-  alterar(Jogo: Jogo): Observable<any> {
+  alterar(Filmes: Filmes): Observable<any> {
     const url = `${this.apiUrl}/alterar`;
-    return this.http.put<Jogo>(url, Jogo, httpOptions);
+    return this.http.put<Filmes>(url, Filmes, httpOptions);
   }
 
   excluir(titulo: string): Observable<any> {
