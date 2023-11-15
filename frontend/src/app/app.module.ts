@@ -36,6 +36,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HomeComponent } from './components/home/home.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { ReservaComponent } from './components/reserva/reserva.component';
+import { PedidoComponent } from './components/pedido/pedido.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     AvaliacaoComponent,
     EnderecoComponent,
     HomeComponent,
+    ReservaComponent,
+    PedidoComponent,
   ],
   imports: [
     BrowserModule,

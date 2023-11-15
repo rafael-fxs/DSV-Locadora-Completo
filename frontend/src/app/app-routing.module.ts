@@ -10,6 +10,7 @@ import { AvaliacaoComponent } from './components/avaliacao/avaliacao.component';
 import { FuncionariosComponent } from './components/funcionarios/funcionarios.component';
 import { EnderecoComponent } from './components/endereco/endereco.component';
 import { HomeComponent } from './components/home/home.component';
+import { ReservaComponent } from './components/reserva/reserva.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'jogos', component: JogosComponent, title: 'Jogos' },
   { path: 'filmes', component: FilmesComponent, title: 'Filmes' },
   { path: 'funcionarios', component: FuncionariosComponent, title: 'Funcionários'},
+  { path: 'reserva', component: ReservaComponent, title: 'Reserva'},
 ];
 
 const routesProf: Routes = [
