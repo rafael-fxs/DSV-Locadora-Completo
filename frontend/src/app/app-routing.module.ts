@@ -11,9 +11,10 @@ import { FuncionariosComponent } from './components/funcionarios/funcionarios.co
 import { EnderecoComponent } from './components/endereco/endereco.component';
 import { HomeComponent } from './components/home/home.component';
 import { ReservaComponent } from './components/reserva/reserva.component';
+import { PedidoComponent } from './components/pedido/pedido.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent, title: 'DSV - Locadora' },
   { path: 'avaliacao', component: AvaliacaoComponent, title: 'Avaliações' },
   { path: 'endereco', component: EnderecoComponent, title: 'Endereços' },
   { path: 'clientes', component: ClientesComponent, title: 'Clientes' },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'filmes', component: FilmesComponent, title: 'Filmes' },
   { path: 'funcionarios', component: FuncionariosComponent, title: 'Funcionários'},
   { path: 'reserva', component: ReservaComponent, title: 'Reserva'},
+  { path: 'pedido', component: PedidoComponent, title: 'Pedido'},
 ];
 
 const routesProf: Routes = [

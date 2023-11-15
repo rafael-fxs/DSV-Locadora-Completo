@@ -1,5 +1,5 @@
 export class Pedido {
-    id?: number | null = 0;
+    id: number = 0;
     nomeProduto: string = '';
     quantidade: number = 0;
     valorTotal: number = 0;

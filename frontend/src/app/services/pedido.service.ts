@@ -13,7 +13,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class PedidoService {
-  apiUrl = 'http://localhost:5000/api/Reserva';
+  apiUrl = 'http://localhost:5000/api/Pedido';
   constructor(private http: HttpClient) { }
   listar(): Observable<Array<Pedido>> {
     const url = `${this.apiUrl}`;

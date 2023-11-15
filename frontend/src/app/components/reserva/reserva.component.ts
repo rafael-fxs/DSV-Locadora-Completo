@@ -11,7 +11,7 @@ import { ReservaService } from 'src/app/services/reserva.service';
 })
 export class ReservaComponent implements OnInit {
   formulario: any;
-  tituloFormulario: string = '';
+  tituloFormulario: string = 'Reserva';
 
   constructor(private reservaService: ReservaService) {}
 
