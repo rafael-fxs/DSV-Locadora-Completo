@@ -20,7 +20,7 @@ export class JogosService {
     return this.http.get<[]>(url);
   }
 
-  buscar(titulo: string): Observable<Jogo> {
+  buscar(titulo: string): Observable<Jogos> {
     const url = `${this.apiUrl}/buscar/${titulo}`;
     return this.http.get<Jogos>(url);
   }
