@@ -1,0 +1,15 @@
+<div class="container p-5">
+  <div class="row d-flex justify-content-center">
+    <div class="col-8 border border-light rounded p-5 shadow">
+      <div class="d-flex justify-content-center" style="position: relative">
+        <h2 style="font-weight: 800">Página Inicial - Rotas</h2>
+      </div>
+
+      <div *ngFor="let route of getRoutes()">
+        <button (click)="navigateTo(route)" class="w-100 mb-2" mat-stroked-button color="primary">
+          {{ route.charAt(0).toUpperCase() + route.slice(1) }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

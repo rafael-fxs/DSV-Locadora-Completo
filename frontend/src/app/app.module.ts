@@ -34,6 +34,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     FuncionariosComponent,
     AvaliacaoComponent,
     EnderecoComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

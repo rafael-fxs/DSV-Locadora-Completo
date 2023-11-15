@@ -9,12 +9,11 @@ import { FilmesComponent } from './components/filmes/filmes.component';
 import { AvaliacaoComponent } from './components/avaliacao/avaliacao.component';
 import { FuncionariosComponent } from './components/funcionarios/funcionarios.component';
 import { EnderecoComponent } from './components/endereco/endereco.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
-  { path: 'marcas', component: MarcasComponent },
-  { path: 'modelos', component: ModelosComponent },
+  { path: '', component: HomeComponent },
   { path: 'clientes', component: ClientesComponent },
-  { path: 'carros', component: CarrosComponent },
   { path: 'jogos', component: JogosComponent },
   { path: 'filmes', component: FilmesComponent },
   { path: 'funcionarios', component: FuncionariosComponent},
@@ -22,8 +21,14 @@ const routes: Routes = [
   { path: 'endereco', component: EnderecoComponent },
 ];
 
+const routesProf: Routes = [
+  { path: 'marcas', component: MarcasComponent },
+  { path: 'modelos', component: ModelosComponent },
+  { path: 'carros', component: CarrosComponent },
+];
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), [RouterModule.forRoot(routesProf)]],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
