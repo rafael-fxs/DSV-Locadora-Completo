@@ -25,6 +25,7 @@ import { AvaliacaoComponent } from './components/avaliacao/avaliacao.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { FormsModule } from '@angular/forms';  
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { MatInputModule } from '@angular/material/input';
     BrowserAnimationsModule,
     FormsModule,
     MatSliderModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [
     HttpClientModule,

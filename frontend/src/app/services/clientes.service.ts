@@ -12,10 +12,10 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ClientesService {
-  apiUrl = 'http://localhost:5000/Cliente';
+  apiUrl = 'http://localhost:5000/api/Cliente';
   constructor(private http: HttpClient) { }
   listar(): Observable<Cliente[]> {
-    const url = `${this.apiUrl}/listar`;
+    const url = `${this.apiUrl}`;
     return this.http.get<Cliente[]>(url);
   }
   buscar(id: string): Observable<Cliente> {
