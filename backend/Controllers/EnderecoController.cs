@@ -64,10 +64,10 @@ public class EnderecoController : ControllerBase
     [Route("alterar")]
     public async Task<ActionResult> Alterar(Endereco endereco)
     {
-        if(_dbContext is null) return NotFound();
-        if(_dbContext.Endereco is null) return NotFound();
-        var enderecoTemp = await _dbContext.Endereco.FindAsync(endereco.ClienteId);
-        if(enderecoTemp is null) return NotFound();      
+        if(_dbContext is null) return BadRequest();
+        if(_dbContext.Endereco is null) return BadRequest();
+        var enderecoTemp = await _dbContext.Endereco.FindAsync(endereco.Id);
+        if(enderecoTemp is null) return BadRequest();      
         _dbContext.Entry(enderecoTemp).State = EntityState.Detached; 
         _dbContext.Endereco.Update(endereco);
         await _dbContext.SaveChangesAsync();

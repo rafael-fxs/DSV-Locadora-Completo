@@ -3,7 +3,7 @@
     <div class="col-8 border border-light rounded p-5 shadow">
       <div class="d-flex justify-content-center" style="position: relative">
         <button
-          routerLink="" 
+          routerLink=""
           class="mr-4"
           style="position: absolute; left: 0"
           type="button"
@@ -15,12 +15,24 @@
       </div>
 
       <mat-tab-group dynamicHeight (selectedTabChange)="listarEnderecos()">
-        <mat-tab label="Cadastrar">
+        <mat-tab label="Cadastrar/Atualizar">
           <form
             [formGroup]="formulario"
             class="mt-4"
             (ngSubmit)="enviarFormulario()"
           >
+            <mat-slide-toggle formControlName="atualizar" class="toggle mb-3">Atualizar</mat-slide-toggle>
+            <mat-form-field *ngIf="this.formulario.get('atualizar')?.value == true" class="w-100">
+              <mat-label>Id</mat-label>
+              <mat-select formControlName="id">
+                <mat-option
+                  *ngFor="let endereco of this.dataSource?.data"
+                  [value]="endereco.id"
+                >
+                  {{ endereco.id }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
             <mat-form-field class="w-100">
               <mat-label>Cliente</mat-label>
               <mat-select formControlName="clienteId">

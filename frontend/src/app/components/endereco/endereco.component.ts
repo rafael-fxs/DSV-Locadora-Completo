@@ -49,6 +49,8 @@ export class EnderecoComponent implements AfterViewInit {
     });
 
     this.formulario = new FormGroup({
+      atualizar: new FormControl(false),
+      id: new FormControl(null),
       clienteId: new FormControl(null),
       rua: new FormControl(null),
       numero: new FormControl(null),
@@ -58,6 +60,8 @@ export class EnderecoComponent implements AfterViewInit {
       complemento: new FormControl(null),
       cep: new FormControl(null),
     })
+
+    this.listarEnderecos();
   }
 
   ngAfterViewInit() {
@@ -76,8 +80,13 @@ export class EnderecoComponent implements AfterViewInit {
       complete(): void {
       },
     };
-
-    this.enderecoService.cadastrar(endereco).subscribe(observer);
+    if (this.formulario.get('atualizar') && this.formulario.get('atualizar').value == true) {
+      this.enderecoService.alterar(endereco).subscribe(observer);
+    } else {
+      this.formulario.get('id').setValue(null);
+      endereco.id = null;
+      this.enderecoService.cadastrar(endereco).subscribe(observer);
+    }
   }
 
   listarEnderecos() {
