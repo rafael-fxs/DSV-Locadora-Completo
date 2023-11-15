@@ -33,6 +33,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatPaginatorModule,
     MatIconModule,
     MatDialogModule,
+    MatToolbarModule
   ],
   providers: [
     HttpClientModule,
