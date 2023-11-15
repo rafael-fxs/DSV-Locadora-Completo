@@ -35,8 +35,8 @@ export class AvaliacaoService {
     return this.http.put<Avaliacao>(url, Avaliacao, httpOptions);
   }
 
-  excluir(id: string): Observable<any> {
+  excluir(id: number): Observable<any> {
     const url = `${this.apiUrl}/excluir/${id}`;
-    return this.http.delete<string>(url, httpOptions);
+    return this.http.delete<number>(url, httpOptions);
   }
 }

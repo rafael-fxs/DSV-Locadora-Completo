@@ -6,11 +6,11 @@ public class Endereco
      [Key]
     public int? Id {get; set;}
     private int _clienteId;
-    private string? _rua;
+    private string _rua;
     private int _numero;
-    private string? _bairro;
-    private string? _cidade;
-    private string? _estado;
+    private string _bairro;
+    private string _cidade;
+    private string _estado;
     private string? _complemento;
     private int _cep;
     public int ClienteId
@@ -19,7 +19,7 @@ public class Endereco
         set => _clienteId = value;
     }
 
-    public string? Rua
+    public string Rua
     {
         get => _rua;
         set => _rua = value;
@@ -31,19 +31,19 @@ public class Endereco
         set => _numero = value;
     }
 
-    public string? Bairro
+    public string Bairro
     {
         get => _bairro;
         set => _bairro = value;
     }
 
-    public string? Cidade
+    public string Cidade
     {
         get => _cidade;
         set => _cidade = value;
     }
 
-    public string? Estado
+    public string Estado
     {
         get => _estado;
         set => _estado = value;

@@ -35,7 +35,7 @@
             </mat-form-field>
             <mat-form-field class="w-100">
               <mat-label>Cliente</mat-label>
-              <mat-select formControlName="clienteId">
+              <mat-select formControlName="clienteId" required>
                 <mat-option
                   *ngFor="let cliente of clientes"
                   [value]="cliente.id"
@@ -47,31 +47,31 @@
             <div class="row">
               <mat-form-field class="col-12">
                 <mat-label>Rua</mat-label>
-                <input matInput formControlName="rua" />
+                <input matInput formControlName="rua" required/>
               </mat-form-field>
             </div>
             <div class="row">
               <mat-form-field class="col-4">
                 <mat-label>Número</mat-label>
-                <input matInput type="number" formControlName="numero" />
+                <input matInput type="number" formControlName="numero" required/>
               </mat-form-field>
               <mat-form-field class="col-4">
                 <mat-label>Cidade</mat-label>
-                <input matInput formControlName="cidade" />
+                <input matInput formControlName="cidade" required/>
               </mat-form-field>
               <mat-form-field class="col-4">
                 <mat-label>Estado</mat-label>
-                <input matInput formControlName="estado" />
+                <input matInput formControlName="estado" required/>
               </mat-form-field>
             </div>
             <div class="row">
               <mat-form-field class="col-6">
                 <mat-label>Bairro</mat-label>
-                <input matInput formControlName="bairro" />
+                <input matInput formControlName="bairro" required/>
               </mat-form-field>
               <mat-form-field class="col-6">
                 <mat-label>CEP</mat-label>
-                <input matInput formControlName="cep" />
+                <input matInput formControlName="cep" required/>
               </mat-form-field>
             </div>
             <div class="row">

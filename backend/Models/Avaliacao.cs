@@ -5,20 +5,12 @@ namespace Locadora.Models;
 public class Avaliacao
 {   
     [Key]
-    public int Id {get; set;}
+    public int? Id {get; set;}
     private int _clienteId;
     private DateTime _dataCriacao;
-    private int _classificaco;
-    private string _comentario;
+    private int _classificacao;
+    private string? _comentario;
     private int _pedidoId;
-
-    public Avaliacao(int clienteId, DateTime dataCriacao, int classificacao, string comentario)
-    {
-        _clienteId = clienteId;
-        _dataCriacao = dataCriacao;
-        _classificaco = classificacao;
-        _comentario = comentario;
-    }
 
     public int ClienteId {
         get => _clienteId;
@@ -31,11 +23,11 @@ public class Avaliacao
     }
 
     public int Classificacao {
-        get => _classificaco;
-        set => _classificaco = value;
+        get => _classificacao;
+        set => _classificacao = value;
     }
 
-    public string Comentario {
+    public string? Comentario {
         get => _comentario;
         set => _comentario = value;
     }

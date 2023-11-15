@@ -1,52 +1,162 @@
 <div class="container p-5">
   <div class="row d-flex justify-content-center">
-    <div
-      class="col-8 border border-light rounded p-5 shadow"
-      *ngIf="formulario"
-    >
-      <h2 style="font-weight: 800">{{ tituloFormulario }}</h2>
-      <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()">
-        <mat-form-field class="w-100">
-          <mat-label>Cliente</mat-label>
-          <mat-select  formControlName="clienteId" >
-            <mat-option *ngFor="let cliente of clientes" [value]="cliente.id">
-              {{ cliente.nome }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-        <div class="mb-3 d-flex align-items-center">
-          <mat-label class="mr-2">Classificação</mat-label>
-          <p class="mr-2 mb-0">0</p>
-          <mat-slider
-          step="1"
-          min="0"
-          max="5"
-          showTickMarks="true"
-          discrete
-          class="w-100"
+    <div class="col-8 border border-light rounded p-5 shadow">
+      <div class="d-flex justify-content-center" style="position: relative">
+        <button
+          routerLink=""
+          class="mr-4"
+          style="position: absolute; left: 0"
+          type="button"
+          mat-stroked-button
+        >
+          Voltar
+        </button>
+        <h2 style="font-weight: 800">Avaliação</h2>
+      </div>
+      <mat-tab-group dynamicHeight (selectedTabChange)="listarAvaliacoes()">
+        <mat-tab label="Cadastrar/Atualizar">
+          <form
+            [formGroup]="formulario"
+            class="mt-4"
+            (ngSubmit)="enviarFormulario()"
           >
-          
-              <input matSliderThumb formControlName="classificacao">
-          </mat-slider>
-          <p class="ml-2 mb-0">5</p>
-        </div>
-        <mat-form-field class="w-100">
-            <mat-label>Comentário</mat-label>
-            <textarea formControlName="comentario" matInput></textarea>
-        </mat-form-field>
-        <mat-form-field class="w-100">
-          <mat-label>PedidoId</mat-label>
-          <input matInput formControlName="pedidoId">
-        </mat-form-field>
-        <div class="container">
-          <div class="row">
-            <div>
-              <button type="submit" mat-flat-button color="primary">Salvar</button>
+            <mat-slide-toggle formControlName="atualizar" class="toggle mb-3"
+              >Atualizar</mat-slide-toggle
+            >
+            <mat-form-field
+              *ngIf="this.formulario.get('atualizar')?.value == true"
+              class="w-100"
+            >
+              <mat-label>Id</mat-label>
+              <mat-select formControlName="id">
+                <mat-option
+                  *ngFor="let avaliacao of this.dataSource?.data"
+                  [value]="avaliacao.id"
+                >
+                  {{ avaliacao.id }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field class="w-100">
+              <mat-label>Cliente</mat-label>
+              <mat-select formControlName="clienteId" required>
+                <mat-option
+                  *ngFor="let cliente of clientes"
+                  [value]="cliente.id"
+                >
+                  {{ cliente.nome }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <div class="mb-3 d-flex align-items-center">
+              <mat-label class="mr-2">Classificação<span style="color: #3f51b5; font-weight: 600">*</span></mat-label>
+              <p class="mr-2 mb-0">0</p>
+              <mat-slider
+                step="1"
+                min="0"
+                max="5"
+                showTickMarks="true"
+                discrete
+                class="w-100"
+              >
+                <input matSliderThumb formControlName="classificacao" />
+              </mat-slider>
+              <p class="ml-2 mb-0">5</p>
             </div>
-            <button routerLink="" class="ml-1" type="button" mat-stroked-button>Voltar</button>
+            <mat-form-field class="w-100">
+              <mat-label>Comentário</mat-label>
+              <textarea formControlName="comentario" matInput></textarea>
+            </mat-form-field>
+            <mat-form-field class="w-100">
+              <mat-label>PedidoId</mat-label>
+              <input type="number" matInput formControlName="pedidoId" required/>
+            </mat-form-field>
+            <div class="container">
+              <div class="row">
+                <div>
+                  <button type="submit" mat-flat-button color="primary">
+                    Salvar
+                  </button>
+                </div>
+                <button
+                  routerLink=""
+                  class="ml-1"
+                  type="button"
+                  mat-stroked-button
+                >
+                  Voltar
+                </button>
+              </div>
+            </div>
+          </form>
+        </mat-tab>
+        <mat-tab label="Listar/Excluir">
+          <div class="mt-4 table-responsive">
+            <table mat-table [dataSource]="dataSource">
+              <ng-container matColumnDef="acao">
+                <th mat-header-cell *matHeaderCellDef>Ação</th>
+                <td mat-cell *matCellDef="let element">
+                  <mat-icon
+                    (click)="excluir(element)"
+                    title="Excluir"
+                    style="color: red; cursor: pointer"
+                    >delete</mat-icon
+                  >
+                </td>
+              </ng-container>
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef>Id</th>
+                <td mat-cell *matCellDef="let element">
+                  {{ element.id }}
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="clienteId">
+                <th mat-header-cell *matHeaderCellDef>ClienteId</th>
+                <td mat-cell *matCellDef="let element">
+                  {{ element.clienteId }}
+                </td>
+              </ng-container>
+              <ng-container matColumnDef="dataCriacao">
+                <th mat-header-cell *matHeaderCellDef>Data Criação</th>
+                <td mat-cell *matCellDef="let element">
+                  {{ element.dataCriacao }}
+                </td>
+              </ng-container>
+              <ng-container matColumnDef="classificaco">
+                <th mat-header-cell *matHeaderCellDef>Classificação</th>
+                <td mat-cell *matCellDef="let element">
+                  {{ element.classificacao }}
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="comentario">
+                <th mat-header-cell *matHeaderCellDef>Comentário</th>
+                <td mat-cell *matCellDef="let element">
+                  {{ element.comentario }}
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="pedidoId">
+                <th mat-header-cell *matHeaderCellDef>PedidoId</th>
+                <td mat-cell *matCellDef="let element">
+                  {{ element.pedidoId }}
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            </table>
+
+            <mat-paginator
+              [pageSizeOptions]="[5, 10, 20]"
+              showFirstLastButtons
+              aria-label="Select page of periodic elements"
+            >
+            </mat-paginator>
           </div>
-        </div>
-      </form>
+        </mat-tab>
+      </mat-tab-group>
     </div>
   </div>
 </div>

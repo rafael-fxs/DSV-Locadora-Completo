@@ -2,14 +2,11 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { Observer } from 'rxjs';
-import { Avaliacao } from 'src/app/models/Avaliacao';
 import { Cliente } from 'src/app/models/Cliente';
 import { Endereco } from 'src/app/models/Endereco';
-import { AvaliacaoService } from 'src/app/services/avaliacao.service';
 import { ClientesService } from 'src/app/services/clientes.service';
 import { EnderecoService } from 'src/app/services/endereco.service';
-import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
-import { MatTableModule } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
 import { DialogExcluirComponent } from '../dialog-excluir/dialog-excluir.component';
 import { MatDialog } from '@angular/material/dialog';
 
