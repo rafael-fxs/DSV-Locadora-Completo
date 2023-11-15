@@ -74,14 +74,13 @@ public class EnderecoController : ControllerBase
         return Ok();
     }
 
-
     [HttpDelete()]
-    [Route("excluir/{clienteId}")]
-    public async Task<ActionResult> Excluir(int clienteId)
+    [Route("excluir/{id}")]
+    public async Task<ActionResult> Excluir(int id)
     {
         if(_dbContext is null) return NotFound();
         if(_dbContext.Endereco is null) return NotFound();
-        var enderecoTemp = await _dbContext.Endereco.FindAsync(clienteId);
+        var enderecoTemp = await _dbContext.Endereco.FindAsync(id);
         if(enderecoTemp is null) return NotFound();
         _dbContext.Remove(enderecoTemp);
         await _dbContext.SaveChangesAsync();

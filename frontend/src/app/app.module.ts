@@ -27,6 +27,12 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { EnderecoComponent } from './components/endereco/endereco.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -39,7 +45,7 @@ import { EnderecoComponent } from './components/endereco/endereco.component';
     FilmesComponent,
     FuncionariosComponent,
     AvaliacaoComponent,
-    EnderecoComponent
+    EnderecoComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +58,13 @@ import { EnderecoComponent } from './components/endereco/endereco.component';
     FormsModule,
     MatSliderModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatButtonModule,
+    MatTabsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatIconModule,
+    MatDialogModule,
   ],
   providers: [
     HttpClientModule,

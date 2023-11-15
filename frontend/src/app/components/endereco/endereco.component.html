@@ -1,1 +1,153 @@
-<p>endereco works!</p>
+<div class="container p-5">
+  <div class="row d-flex justify-content-center">
+    <div class="col-8 border border-light rounded p-5 shadow">
+      <div class="d-flex justify-content-center" style="position: relative">
+        <button
+          class="mr-4"
+          style="position: absolute; left: 0"
+          type="button"
+          mat-stroked-button
+        >
+          Voltar
+        </button>
+        <h2 style="font-weight: 800">Endereço</h2>
+      </div>
+
+      <mat-tab-group dynamicHeight (selectedTabChange)="listarEnderecos()">
+        <mat-tab label="Cadastrar">
+          <form
+            [formGroup]="formulario"
+            class="mt-4"
+            (ngSubmit)="enviarFormulario()"
+          >
+            <mat-form-field class="w-100">
+              <mat-label>Cliente</mat-label>
+              <mat-select formControlName="clienteId">
+                <mat-option
+                  *ngFor="let cliente of clientes"
+                  [value]="cliente.id"
+                >
+                  {{ cliente.nome }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <div class="row">
+              <mat-form-field class="col-12">
+                <mat-label>Rua</mat-label>
+                <input matInput formControlName="rua" />
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field class="col-4">
+                <mat-label>Número</mat-label>
+                <input matInput type="number" formControlName="numero" />
+              </mat-form-field>
+              <mat-form-field class="col-4">
+                <mat-label>Cidade</mat-label>
+                <input matInput formControlName="cidade" />
+              </mat-form-field>
+              <mat-form-field class="col-4">
+                <mat-label>Estado</mat-label>
+                <input matInput formControlName="estado" />
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field class="col-6">
+                <mat-label>Bairro</mat-label>
+                <input matInput formControlName="bairro" />
+              </mat-form-field>
+              <mat-form-field class="col-6">
+                <mat-label>CEP</mat-label>
+                <input matInput formControlName="cep" />
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field class="col-12">
+                <mat-label>Complemento</mat-label>
+                <input matInput formControlName="complemento" />
+              </mat-form-field>
+            </div>
+            <div class="container">
+              <div class="row">
+                <div>
+                  <button type="submit" mat-flat-button color="primary">
+                    Salvar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </mat-tab>
+        <mat-tab label="Listar/Excluir">
+          <div class="mt-4 table-responsive">
+            <table mat-table [dataSource]="dataSource">
+            <ng-container matColumnDef="acao">
+                <th mat-header-cell *matHeaderCellDef>Ação</th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-icon (click)="excluir(element)" style="color: red; cursor: pointer;">delete</mat-icon>
+                </td>
+                </ng-container>
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef>Id</th>
+                <td mat-cell *matCellDef="let element">
+                  {{ element.id }}
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="clienteId">
+                <th mat-header-cell *matHeaderCellDef>ClienteId</th>
+                <td mat-cell *matCellDef="let element">
+                  {{ element.clienteId }}
+                </td>
+              </ng-container>
+              <ng-container matColumnDef="rua">
+                <th mat-header-cell *matHeaderCellDef>Rua</th>
+                <td mat-cell *matCellDef="let element">{{ element.rua }}</td>
+              </ng-container>
+              <ng-container matColumnDef="numero">
+                <th mat-header-cell *matHeaderCellDef>Número</th>
+                <td mat-cell *matCellDef="let element">{{ element.numero }}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="bairro">
+                <th mat-header-cell *matHeaderCellDef>Bairro</th>
+                <td mat-cell *matCellDef="let element">{{ element.bairro }}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="cidade">
+                <th mat-header-cell *matHeaderCellDef>Cidade</th>
+                <td mat-cell *matCellDef="let element">{{ element.cidade }}</td>
+              </ng-container>
+              <ng-container matColumnDef="estado">
+                <th mat-header-cell *matHeaderCellDef>Estado</th>
+                <td mat-cell *matCellDef="let element">{{ element.estado }}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="complemento">
+                <th mat-header-cell *matHeaderCellDef>Complemento</th>
+                <td mat-cell *matCellDef="let element">
+                  {{ element.complemento }}
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="cep">
+                <th mat-header-cell *matHeaderCellDef>CEP</th>
+                <td mat-cell *matCellDef="let element">{{ element.cep }}</td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            </table>
+
+            <mat-paginator
+              [pageSizeOptions]="[5, 10, 20]"
+              showFirstLastButtons
+              aria-label="Select page of periodic elements"
+            >
+            </mat-paginator>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</div>

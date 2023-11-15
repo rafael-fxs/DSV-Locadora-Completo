@@ -8,6 +8,7 @@ import { JogosComponent } from './components/jogos/jogos.component';
 import { FilmesComponent } from './components/filmes/filmes.component';
 import { AvaliacaoComponent } from './components/avaliacao/avaliacao.component';
 import { FuncionariosComponent } from './components/funcionarios/funcionarios.component';
+import { EnderecoComponent } from './components/endereco/endereco.component';
 
 const routes: Routes = [
   { path: 'marcas', component: MarcasComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'filmes', component: FilmesComponent },
   { path: 'funcionarios', component: FuncionariosComponent},
   { path: 'avaliacao', component: AvaliacaoComponent },
+  { path: 'endereco', component: EnderecoComponent },
 ];
 
 @NgModule({
