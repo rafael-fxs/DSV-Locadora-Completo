@@ -23,7 +23,7 @@ export class AvaliacaoComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.tituloFormulario = 'Novo Avaliacao';
+    this.tituloFormulario = 'Avaliar Pedido';
 
     this.clientesService.listar().subscribe(clientes => {
       this.clientes = clientes;
