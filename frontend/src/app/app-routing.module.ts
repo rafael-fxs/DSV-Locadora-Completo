@@ -21,8 +21,8 @@ const routes: Routes = [
   { path: 'jogos', component: JogosComponent, title: 'Jogos' },
   { path: 'filmes', component: FilmesComponent, title: 'Filmes' },
   { path: 'funcionarios', component: FuncionariosComponent, title: 'Funcionários'},
-  { path: 'reserva', component: ReservaComponent, title: 'Reserva'},
-  { path: 'pedido', component: PedidoComponent, title: 'Pedido'},
+  { path: 'reserva', component: ReservaComponent, title: 'Reservas'},
+  { path: 'pedido', component: PedidoComponent, title: 'Pedidos'},
 ];
 
 const routesProf: Routes = [
