@@ -13,12 +13,12 @@ import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'avaliacao', component: AvaliacaoComponent },
-  { path: 'endereco', component: EnderecoComponent },
-  { path: 'clientes', component: ClientesComponent },
-  { path: 'jogos', component: JogosComponent },
-  { path: 'filmes', component: FilmesComponent },
-  { path: 'funcionarios', component: FuncionariosComponent},
+  { path: 'avaliacao', component: AvaliacaoComponent, title: 'Avaliações' },
+  { path: 'endereco', component: EnderecoComponent, title: 'Endereços' },
+  { path: 'clientes', component: ClientesComponent, title: 'Clientes' },
+  { path: 'jogos', component: JogosComponent, title: 'Jogos' },
+  { path: 'filmes', component: FilmesComponent, title: 'Filmes' },
+  { path: 'funcionarios', component: FuncionariosComponent, title: 'Funcionários'},
 ];
 
 const routesProf: Routes = [
