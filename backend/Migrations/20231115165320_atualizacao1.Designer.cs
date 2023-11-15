@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Locadora.Migrations
 {
     [DbContext(typeof(LocadoraDbContext))]
-    [Migration("20231006001250_projetoAlberto")]
-    partial class projetoAlberto
+    [Migration("20231115165320_atualizacao1")]
+    partial class atualizacao1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -93,9 +93,36 @@ namespace Locadora.Migrations
                     b.ToTable("Avaliacao");
                 });
 
+            modelBuilder.Entity("Locadora.Models.Cliente", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("CPF")
+                        .IsRequired()
+                        .HasMaxLength(11)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Telefone")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Cliente");
+                });
+
             modelBuilder.Entity("Locadora.Models.Endereco", b =>
                 {
-                    b.Property<int>("ClienteId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -107,6 +134,9 @@ namespace Locadora.Migrations
 
                     b.Property<string>("Cidade")
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("ClienteId")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Complemento")
                         .HasColumnType("TEXT");
@@ -120,7 +150,7 @@ namespace Locadora.Migrations
                     b.Property<string>("Rua")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("ClienteId");
+                    b.HasKey("Id");
 
                     b.ToTable("Endereco");
                 });
@@ -151,6 +181,32 @@ namespace Locadora.Migrations
                     b.ToTable("Filmes");
                 });
 
+            modelBuilder.Entity("Locadora.Models.Funcionario", b =>
+                {
+                    b.Property<string>("CPF")
+                        .HasMaxLength(11)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Cargo")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("NumeroTelefone")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("Salario")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("CPF");
+
+                    b.ToTable("Funcionario");
+                });
+
             modelBuilder.Entity("Locadora.Models.Jogos", b =>
                 {
                     b.Property<int>("Id")
@@ -175,6 +231,95 @@ namespace Locadora.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Jogos");
+                });
+
+            modelBuilder.Entity("Locadora.Models.Locacao", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("DataLocacao")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("NomeCliente")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Titulo")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Locacoes");
+                });
+
+            modelBuilder.Entity("Locadora.Models.Pagamento", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("DataPagamento")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("NomeCliente")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TipoPagamento")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("Valor")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Pagamentos");
+                });
+
+            modelBuilder.Entity("Pedido", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ClienteId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("NomeProduto")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Quantidade")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<decimal>("ValorTotal")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Pedido");
+                });
+
+            modelBuilder.Entity("Reserva", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("DataReserva")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("NomeCliente")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Reserva");
                 });
 #pragma warning restore 612, 618
         }

@@ -4,6 +4,7 @@ namespace Locadora.Models;
 public class Endereco
 {
     [Key]
+    private int _id;
     private int _clienteId;
     private string? _rua;
     private int _numero;
@@ -14,6 +15,12 @@ public class Endereco
     private int _cep;
 
     [Key]
+    public int Id
+    {
+        get => _id;
+        set => _id = Id;
+    }
+
     public int ClienteId
     {
         get => _clienteId;

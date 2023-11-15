@@ -26,6 +26,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { FormsModule } from '@angular/forms';  
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { EnderecoComponent } from './components/endereco/endereco.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { MatSelectModule } from '@angular/material/select';
     JogosComponent,
     FilmesComponent,
     FuncionariosComponent,
-    AvaliacaoComponent
+    AvaliacaoComponent,
+    EnderecoComponent
   ],
   imports: [
     BrowserModule,

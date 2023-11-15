@@ -1,4 +1,5 @@
-export class Endereco { 
+export class Endereco {
+    id: number = 0
     clienteId: number = 0;
     rua: string = '';
     numero: number = 0;

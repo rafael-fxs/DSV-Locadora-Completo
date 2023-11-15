@@ -119,7 +119,7 @@ namespace Locadora.Migrations
 
             modelBuilder.Entity("Locadora.Models.Endereco", b =>
                 {
-                    b.Property<int>("ClienteId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -131,6 +131,9 @@ namespace Locadora.Migrations
 
                     b.Property<string>("Cidade")
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("ClienteId")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Complemento")
                         .HasColumnType("TEXT");
@@ -144,7 +147,7 @@ namespace Locadora.Migrations
                     b.Property<string>("Rua")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("ClienteId");
+                    b.HasKey("Id");
 
                     b.ToTable("Endereco");
                 });
@@ -278,6 +281,9 @@ namespace Locadora.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ClienteId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("NomeProduto")
