@@ -72,4 +72,15 @@ public class PedidoController : ControllerBase
 
         return NoContent();
     }
+
+    [HttpGet("{id}")]
+    public ActionResult<Pedido> GetByClienteId(int clienteId)
+    {
+        var pedido = pedidos.FirstOrDefault(p => p.ClienteId == clienteId);
+        if (pedido == null)
+        {
+            return NotFound();
+        }
+        return Ok(pedido);
+    }
 }
