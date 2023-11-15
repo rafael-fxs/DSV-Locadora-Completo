@@ -11,7 +11,7 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class FilmesServiceService {
+export class FilmesService {
   apiUrl = 'http://localhost:5000/Filmes';
   constructor(private http: HttpClient) { }
 
