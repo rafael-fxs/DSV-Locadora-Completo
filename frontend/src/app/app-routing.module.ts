@@ -13,12 +13,12 @@ import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'avaliacao', component: AvaliacaoComponent },
+  { path: 'endereco', component: EnderecoComponent },
   { path: 'clientes', component: ClientesComponent },
   { path: 'jogos', component: JogosComponent },
   { path: 'filmes', component: FilmesComponent },
   { path: 'funcionarios', component: FuncionariosComponent},
-  { path: 'avaliacao', component: AvaliacaoComponent },
-  { path: 'endereco', component: EnderecoComponent },
 ];
 
 const routesProf: Routes = [
