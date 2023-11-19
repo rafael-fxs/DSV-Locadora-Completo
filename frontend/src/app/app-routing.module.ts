@@ -12,14 +12,18 @@ import { EnderecoComponent } from './components/endereco/endereco.component';
 import { HomeComponent } from './components/home/home.component';
 import { ReservaComponent } from './components/reserva/reserva.component';
 import { PedidoComponent } from './components/pedido/pedido.component';
+import { AssinaturaPlano } from './components/assinaturaPlano/assinaturaPlano.component';
+import { Fornecedor } from './components/fornecedor/fornecedor.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, title: 'DSV - Locadora' },
+  { path: 'assinaturaPlano', component: AssinaturaPlanoComponent, title: 'AssinaturaPlanos' },
   { path: 'avaliacao', component: AvaliacaoComponent, title: 'Avaliações' },
   { path: 'endereco', component: EnderecoComponent, title: 'Endereços' },
   { path: 'clientes', component: ClientesComponent, title: 'Clientes' },
   { path: 'jogos', component: JogosComponent, title: 'Jogos' },
   { path: 'filmes', component: FilmesComponent, title: 'Filmes' },
+  { path: 'fornecedor', component: FornecedorComponent, title: 'Fornecedor' },
   { path: 'funcionarios', component: FuncionariosComponent, title: 'Funcionários'},
   { path: 'reserva', component: ReservaComponent, title: 'Reservas'},
   { path: 'pedido', component: PedidoComponent, title: 'Pedidos'},

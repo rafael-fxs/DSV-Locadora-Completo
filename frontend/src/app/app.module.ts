@@ -38,6 +38,10 @@ import { HomeComponent } from './components/home/home.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ReservaComponent } from './components/reserva/reserva.component';
 import { PedidoComponent } from './components/pedido/pedido.component';
+import { AssinaturaPlanoComponent } from './components/assinaturaPlano/assinaturaPlano.component';
+import { AssinaturaPlanoService } from './services/assinaturaPlano.service';
+import { FornecedorComponent } from './components/fornecedor/fornecedor.component';
+import { FornecedorService } from './services/fornecedor.service';
 
 @NgModule({
   declarations: [
