@@ -4,8 +4,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Observer } from 'rxjs';
-import { AssinaturaPlano } from 'src/app/models/AssinaturaPlano'; // Certifique-se de ter o modelo AssinaturaPlano no caminho correto
-import { AssinaturaPlanoService } from 'src/app/services/assinatura-plano.service'; // Certifique-se de ter o serviço AssinaturaPlanoService no caminho correto
+import { AssinaturaPlano } from 'src/app/models/AssinaturaPlano'; 
+import { AssinaturaPlanoService } from 'src/app/services/assinatura-plano.service';
 import { DialogExcluirComponent } from '../dialog-excluir/dialog-excluir.component';
 
 @Component({
@@ -16,14 +16,14 @@ import { DialogExcluirComponent } from '../dialog-excluir/dialog-excluir.compone
 export class AssinaturaPlanoComponent implements OnInit {
   formulario: any;
   tituloFormulario: string = '';
-  displayedColumns: string[] = ['id', 'nomeAssinante', 'planoId', 'dataInicio', 'dataFim']; // Adapte as colunas conforme as propriedades do modelo AssinaturaPlano
+  displayedColumns: string[] = ['id', 'nomeAssinante', 'planoId', 'dataInicio', 'dataFim']; 
   ELEMENT_DATA: AssinaturaPlano[] = [];
   dataSource = new MatTableDataSource<AssinaturaPlano>(this.ELEMENT_DATA);
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
 
   constructor(
-    private assinaturaPlanoService: AssinaturaPlanoService, // Certifique-se de ter o serviço AssinaturaPlanoService no caminho correto
+    private assinaturaPlanoService: AssinaturaPlanoService, 
     public dialog: MatDialog
   ) { }
 
@@ -31,7 +31,7 @@ export class AssinaturaPlanoComponent implements OnInit {
     this.tituloFormulario = 'Lista de Assinaturas de Plano';
 
     this.formulario = new FormGroup({
-      // Adapte os campos conforme as propriedades do modelo AssinaturaPlano
+      
       nomeAssinante: new FormControl(null),
       planoId: new FormControl(null),
       dataInicio: new FormControl(null),
