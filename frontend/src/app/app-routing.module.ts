@@ -14,6 +14,8 @@ import { ReservaComponent } from './components/reserva/reserva.component';
 import { PedidoComponent } from './components/pedido/pedido.component';
 import { AssinaturaPlanoComponent } from './components/assinaturaPlano/assinaturaPlano.component';
 import { FornecedorComponent } from './components/fornecedor/fornecedor.component';
+import { PagamentosComponent } from './components/pagamentos/pagamentos.component';
+import { LocacoesComponent } from './components/locacoes/locacoes.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, title: 'DSV - Locadora' },
@@ -27,6 +29,8 @@ const routes: Routes = [
   { path: 'funcionarios', component: FuncionariosComponent, title: 'Funcionários'},
   { path: 'reserva', component: ReservaComponent, title: 'Reservas'},
   { path: 'pedido', component: PedidoComponent, title: 'Pedidos'},
+  { path: 'pagamentos', component: PagamentosComponent, title: 'Pagamentos' },
+  { path: 'locacoes', component: LocacoesComponent, title: 'Locações' },
 ];
 
 const routesProf: Routes = [
@@ -39,4 +43,4 @@ const routesProf: Routes = [
   imports: [RouterModule.forRoot(routes), [RouterModule.forRoot(routesProf)]],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

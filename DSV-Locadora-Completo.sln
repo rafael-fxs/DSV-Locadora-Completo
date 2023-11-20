@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
+<<<<<<< HEAD
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Locadora", "backend\Locadora.csproj", "{64ABA612-C506-4FA3-AEAB-47AF3C538626}"
+=======
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Locadora", "backend\Locadora.csproj", "{4E668CC3-0607-4058-B634-99B01A9A02A8}"
+>>>>>>> 29384d3 (atualizações carol)
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +15,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+<<<<<<< HEAD
 		{64ABA612-C506-4FA3-AEAB-47AF3C538626}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{64ABA612-C506-4FA3-AEAB-47AF3C538626}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64ABA612-C506-4FA3-AEAB-47AF3C538626}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64ABA612-C506-4FA3-AEAB-47AF3C538626}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
+		{4E668CC3-0607-4058-B634-99B01A9A02A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E668CC3-0607-4058-B634-99B01A9A02A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E668CC3-0607-4058-B634-99B01A9A02A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E668CC3-0607-4058-B634-99B01A9A02A8}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> 29384d3 (atualizações carol)
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
+<<<<<<< HEAD
 		SolutionGuid = {98B7F6DA-C07A-4489-82C0-75D410568FEF}
+=======
+		SolutionGuid = {E904D41C-3E6C-40E0-B9D3-FB7F748E0BF1}
+>>>>>>> 29384d3 (atualizações carol)
 	EndGlobalSection
 EndGlobal

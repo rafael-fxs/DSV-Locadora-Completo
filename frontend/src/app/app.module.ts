@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ModalModule} from 'ngx-bootstrap/modal';
+import { ModalModule } from 'ngx-bootstrap/modal';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarrosService } from './services/carros.service';
 import { ClientesComponent } from './components/clientes/clientes.component';
@@ -23,7 +23,7 @@ import { FilmesComponent } from './components/filmes/filmes.component';
 import { FilmesService } from './services/filmes.service';
 import { AvaliacaoComponent } from './components/avaliacao/avaliacao.component';
 import { MatSliderModule } from '@angular/material/slider';
-import { FormsModule } from '@angular/forms';  
+import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { EnderecoComponent } from './components/endereco/endereco.component';
@@ -42,6 +42,10 @@ import { AssinaturaPlanoService } from './services/assinaturaPlano.service';
 import { FornecedorComponent } from './components/fornecedor/fornecedor.component';
 import { FornecedorService } from './services/fornecedor.service';
 import { AssinaturaPlanoComponent } from './components/assinaturaPlano/assinaturaPlano.component';
+import { LocacoesService } from './services/locacoes.service';
+import { LocacoesComponent } from './components/locacoes/locacoes.component';
+import { PagamentosService } from './services/pagamentos.service';
+import { PagamentosComponent } from './components/pagamentos/pagamentos.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +63,9 @@ import { AssinaturaPlanoComponent } from './components/assinaturaPlano/assinatur
     ReservaComponent,
     PedidoComponent,
     FornecedorComponent,
-    AssinaturaPlanoComponent
+    AssinaturaPlanoComponent,
+    LocacoesComponent,
+    PagamentosComponent,
   ],
   imports: [
     BrowserModule,
@@ -92,7 +98,9 @@ import { AssinaturaPlanoComponent } from './components/assinaturaPlano/assinatur
     FuncionariosService,
     CarrosService,
     AssinaturaPlanoService,
-    FornecedorService
+    FornecedorService,
+    LocacoesService,
+    PagamentosService,
   ],
   bootstrap: [AppComponent]
 })
