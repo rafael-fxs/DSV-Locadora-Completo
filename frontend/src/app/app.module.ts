@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ModalModule} from 'ngx-bootstrap/modal';
+import { ModalModule } from 'ngx-bootstrap/modal';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarrosService } from './services/carros.service';
 import { ClientesComponent } from './components/clientes/clientes.component';
@@ -22,8 +22,12 @@ import { FilmesService } from './services/modelos.service';
 import { AvaliacaoComponent } from './components/avaliacao/avaliacao.component';
 import { AvaliacaoComponent } from './components/avaliacao/avaliacao.component';
 import { MatSliderModule } from '@angular/material/slider';
-import { FormsModule } from '@angular/forms';  
+import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { LocacoesService } from './services/locacoes.service';
+import { LocacoesComponent } from './components/locacoes/locacoes.component';
+import { PagamentosService } from './services/pagamentos.service';
+import { PagamentosComponent } from './components/pagamentos/pagamentos.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,9 @@ import { MatInputModule } from '@angular/material/input';
     CarrosComponent,
     JogosComponent,
     FilmesComponent,
-    AvaliacaoComponent
+    AvaliacaoComponent,
+    LocacoesComponent,
+    PagamentosComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +61,9 @@ import { MatInputModule } from '@angular/material/input';
     ClientesService,
     JogosService,
     FilmesService,
-    CarrosService
+    CarrosService,
+    LocacoesService,
+    PagamentosService
   ],
   bootstrap: [AppComponent]
 })
