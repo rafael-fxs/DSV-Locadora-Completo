@@ -42,10 +42,11 @@ export class FornecedorComponent implements OnInit {
 
   enviarFormulario(): void {
     const fornecedor: Fornecedor = this.formulario.value;
+    const self = this;
     const observer: Observer<Fornecedor> = {
       next(_result): void {
         alert('Fornecedor salvo com sucesso.');
-        this.listarFornecedores();
+        self.listarFornecedores();
       },
       error(_error): void {
         alert('Erro ao salvar o Fornecedor!');
@@ -68,10 +69,11 @@ export class FornecedorComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
+        const self = this;
         const observer: Observer<Number> = {
           next(_result): void {
             alert('Fornecedor excluído com sucesso.');
-            this.listarFornecedores();
+            self.listarFornecedores();
           },
           error(_error): void {
             alert('Erro ao excluir o Fornecedor!');

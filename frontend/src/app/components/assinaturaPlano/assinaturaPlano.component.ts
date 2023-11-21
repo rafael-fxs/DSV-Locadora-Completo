@@ -4,19 +4,19 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Observer } from 'rxjs';
-import { AssinaturaPlano } from 'src/app/models/AssinaturaPlano'; 
-import { AssinaturaPlanoService } from 'src/app/services/assinatura-plano.service';
+import { AssinaturaPlano } from 'src/app/models/Assinatura';
+import { AssinaturaPlanoService } from 'src/app/services/assinaturaPlano.service';
 import { DialogExcluirComponent } from '../dialog-excluir/dialog-excluir.component';
 
 @Component({
   selector: 'app-assinatura-plano',
-  templateUrl: './assinatura-plano.component.html',
-  styleUrls: ['./assinatura-plano.component.css']
+  templateUrl: './assinaturaPlano.component.html',
+  styleUrls: ['./assinaturaPlano.component.css']
 })
 export class AssinaturaPlanoComponent implements OnInit {
   formulario: any;
   tituloFormulario: string = '';
-  displayedColumns: string[] = ['id', 'nomeAssinante', 'planoId', 'dataInicio', 'dataFim']; 
+  displayedColumns: string[] = ['nomeAssinante', 'planoId', 'dataInicio', 'dataFim']; 
   ELEMENT_DATA: AssinaturaPlano[] = [];
   dataSource = new MatTableDataSource<AssinaturaPlano>(this.ELEMENT_DATA);
   @ViewChild(MatPaginator)
@@ -43,10 +43,11 @@ export class AssinaturaPlanoComponent implements OnInit {
 
   enviarFormulario(): void {
     const assinaturaPlano: AssinaturaPlano = this.formulario.value;
+    const self = this;
     const observer: Observer<AssinaturaPlano> = {
       next(_result): void {
         alert('Assinatura de Plano salva com sucesso.');
-        this.listarAssinaturas();
+        self.listarAssinaturas();
       },
       error(_error): void {
         alert('Erro ao salvar a Assinatura de Plano!');
@@ -69,10 +70,11 @@ export class AssinaturaPlanoComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
+        const self = this;
         const observer: Observer<Number> = {
           next(_result): void {
             alert('Assinatura de Plano excluída com sucesso.');
-            this.listarAssinaturas();
+            self.listarAssinaturas();
           },
           error(_error): void {
             alert('Erro ao excluir a Assinatura de Plano!');

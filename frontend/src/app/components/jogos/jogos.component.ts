@@ -4,9 +4,10 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Observer } from 'rxjs';
-import { Jogo } from 'src/app/models/Jogo';
-import { JogoService } from 'src/app/services/jogo.service';
+import { JogosService } from 'src/app/services/jogos.service';
 import { DialogExcluirComponent } from '../dialog-excluir/dialog-excluir.component';
+import { Jogos } from 'src/app/models/Jogos';
+
 
 @Component({
   selector: 'app-jogos',
@@ -17,8 +18,8 @@ export class JogosComponent implements OnInit {
   formulario: any;
   tituloFormulario: string = '';
   displayedColumns: string[] = ['dataCriacao', 'titulo', 'genero', 'descricao', 'preco'];
-  ELEMENT_DATA: Jogo[] = [];
-  dataSource = new MatTableDataSource<Jogo>(this.ELEMENT_DATA);
+  ELEMENT_DATA: Jogos[] = [];
+  dataSource = new MatTableDataSource<Jogos>(this.ELEMENT_DATA);
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
 
@@ -42,11 +43,12 @@ export class JogosComponent implements OnInit {
   }
 
   enviarFormulario(): void {
-    const jogo: Jogo = this.formulario.value;
-    const observer: Observer<Jogo> = {
+    const jogo: Jogos = this.formulario.value;
+    const self = this;
+    const observer: Observer<Jogos> = {
       next(_result): void {
         alert('Jogo salvo com sucesso.');
-        this.listarJogos();
+        self.listarJogos();
       },
       error(_error): void {
         alert('Erro ao salvar o jogo!');
@@ -54,11 +56,11 @@ export class JogosComponent implements OnInit {
       complete(): void {
       },
     };
-    this.jogoService.cadastrar(jogo).subscribe(observer);
+    this.jogosService.cadastrar(jogo).subscribe(observer);
   }
 
   listarJogos() {
-    this.jogoService.listar().subscribe(jogos => {
+    this.jogosService.listar().subscribe(jogos => {
       this.dataSource.data = jogos;
     });
   }
@@ -69,10 +71,11 @@ export class JogosComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
+        const self = this;
         const observer: Observer<Number> = {
           next(_result): void {
             alert('Jogo excluído com sucesso.');
-            this.listarJogos();
+            self.listarJogos();
           },
           error(_error): void {
             alert('Erro ao excluir o jogo!');

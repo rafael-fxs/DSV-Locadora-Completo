@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AssinaturaPlanoService } from './AssinaturaPlano.service';
+import { AssinaturaPlanoService } from './assinaturaPlano.service';
 
 describe('AssinaturaPlanoService', () => {
   let service: AssinaturaPlanoService;

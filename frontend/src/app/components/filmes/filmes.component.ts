@@ -4,7 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Observer } from 'rxjs';
-import { Filme } from 'src/app/models/Filmes';
+import { Filmes } from 'src/app/models/Filmes';
 import { FilmesService } from 'src/app/services/filmes.service'; // Certifique-se de ter o serviço FilmesService no caminho correto
 import { DialogExcluirComponent } from '../dialog-excluir/dialog-excluir.component';
 
@@ -17,8 +17,8 @@ export class FilmesComponent implements OnInit {
   formulario: any;
   tituloFormulario: string = '';
   displayedColumns: string[] = ['dataCriacao', 'titulo', 'genero', 'descricao', 'preco'];
-  ELEMENT_DATA: Filme[] = [];
-  dataSource = new MatTableDataSource<Filme>(this.ELEMENT_DATA);
+  ELEMENT_DATA: Filmes[] = [];
+  dataSource = new MatTableDataSource<Filmes>(this.ELEMENT_DATA);
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
 
@@ -42,11 +42,12 @@ export class FilmesComponent implements OnInit {
   }
 
   enviarFormulario(): void {
-    const filme: Filme = this.formulario.value;
-    const observer: Observer<Filme> = {
+    const filme: Filmes = this.formulario.value;
+    const self = this;
+    const observer: Observer<Filmes> = {
       next(_result): void {
         alert('Filme salvo com sucesso.');
-        this.listarFilmes();
+        self.listarFilmes();
       },
       error(_error): void {
         alert('Erro ao salvar o filme!');
@@ -69,10 +70,11 @@ export class FilmesComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
+        const self = this;
         const observer: Observer<Number> = {
           next(_result): void {
             alert('Filme excluído com sucesso.');
-            this.listarFilmes();
+            self.listarFilmes();
           },
           error(_error): void {
             alert('Erro ao excluir o filme!');

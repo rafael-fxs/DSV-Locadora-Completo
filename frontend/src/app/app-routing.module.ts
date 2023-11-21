@@ -12,8 +12,8 @@ import { EnderecoComponent } from './components/endereco/endereco.component';
 import { HomeComponent } from './components/home/home.component';
 import { ReservaComponent } from './components/reserva/reserva.component';
 import { PedidoComponent } from './components/pedido/pedido.component';
-import { AssinaturaPlano } from './components/assinaturaPlano/assinaturaPlano.component';
-import { Fornecedor } from './components/fornecedor/fornecedor.component';
+import { AssinaturaPlanoComponent } from './components/assinaturaPlano/assinaturaPlano.component';
+import { FornecedorComponent } from './components/fornecedor/fornecedor.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, title: 'DSV - Locadora' },

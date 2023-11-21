@@ -38,10 +38,10 @@ import { HomeComponent } from './components/home/home.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ReservaComponent } from './components/reserva/reserva.component';
 import { PedidoComponent } from './components/pedido/pedido.component';
-import { AssinaturaPlanoComponent } from './components/assinaturaPlano/assinaturaPlano.component';
 import { AssinaturaPlanoService } from './services/assinaturaPlano.service';
 import { FornecedorComponent } from './components/fornecedor/fornecedor.component';
 import { FornecedorService } from './services/fornecedor.service';
+import { AssinaturaPlanoComponent } from './components/assinaturaPlano/assinaturaPlano.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +58,8 @@ import { FornecedorService } from './services/fornecedor.service';
     HomeComponent,
     ReservaComponent,
     PedidoComponent,
+    FornecedorComponent,
+    AssinaturaPlanoComponent
   ],
   imports: [
     BrowserModule,
@@ -88,7 +90,9 @@ import { FornecedorService } from './services/fornecedor.service';
     JogosService,
     FilmesService,
     FuncionariosService,
-    CarrosService
+    CarrosService,
+    AssinaturaPlanoService,
+    FornecedorService
   ],
   bootstrap: [AppComponent]
 })
