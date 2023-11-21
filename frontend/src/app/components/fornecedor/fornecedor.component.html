@@ -15,7 +15,7 @@
               <mat-form-field *ngIf="formulario.get('atualizar')?.value == true" class="w-100">
                 <mat-label>Id</mat-label>
                 <mat-select formControlName="id">
-                  <mat-option *ngFor="let fornecedor of fornecedores" [value]="fornecedor.id">
+                  <mat-option *ngFor="let fornecedor of this.dataSource?.data" [value]="fornecedor.id">
                     {{ fornecedor.id }}
                   </mat-option>
                 </mat-select>
@@ -44,7 +44,7 @@
           </mat-tab>
           <mat-tab label="Listar/Excluir">
             <div class="mt-4 table-responsive">
-              <table mat-table [dataSource]="fornecedores">
+              <table mat-table [dataSource]="dataSource">
                 <ng-container matColumnDef="acao">
                   <th mat-header-cell *matHeaderCellDef>Ação</th>
                   <td mat-cell *matCellDef="let fornecedor">

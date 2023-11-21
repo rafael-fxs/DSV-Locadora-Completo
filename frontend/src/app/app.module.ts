@@ -7,16 +7,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CarrosService } from './services/carros.service';
 import { ClientesComponent } from './components/clientes/clientes.component';
-import { MarcasComponent } from './components/marcas/marcas.component';
-import { ModelosComponent } from './components/modelos/modelos.component';
 import { ClientesService } from './services/clientes.service';
 import { FuncionariosComponent } from './components/funcionarios/funcionarios.component';
 import { FuncionariosService } from './services/funcionarios.service';
-import { MarcasService } from './services/marcas.service';
-import { ModelosService } from './services/modelos.service';
-import { CarrosComponent } from './components/carros/carros.component';
 import { JogosComponent } from './components/jogos/jogos.component';
 import { JogosService } from './services/jogos.service';
 import { FilmesComponent } from './components/filmes/filmes.component';
@@ -50,10 +44,7 @@ import { PagamentosComponent } from './components/pagamentos/pagamentos.componen
 @NgModule({
   declarations: [
     AppComponent,
-    MarcasComponent,
-    ModelosComponent,
     ClientesComponent,
-    CarrosComponent,
     JogosComponent,
     FilmesComponent,
     FuncionariosComponent,
@@ -90,13 +81,10 @@ import { PagamentosComponent } from './components/pagamentos/pagamentos.componen
   ],
   providers: [
     HttpClientModule,
-    MarcasService,
-    ModelosService,
     ClientesService,
     JogosService,
     FilmesService,
     FuncionariosService,
-    CarrosService,
     AssinaturaPlanoService,
     FornecedorService,
     LocacoesService,
