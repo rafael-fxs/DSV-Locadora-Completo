@@ -6,8 +6,8 @@ import { Observer } from 'rxjs';
 
 @Component({
   selector: 'app-locacoes',
-  templateUrl: 'src/app/components/locacoes/locacoes.component.html',
-  styleUrls: ['src/app/components/locacoes/locacoes.component.css'],
+  templateUrl: './locacoes.component.html',
+  styleUrls: ['./locacoes.component.css'],
 })
 export class LocacoesComponent implements OnInit {
   formulario: any;

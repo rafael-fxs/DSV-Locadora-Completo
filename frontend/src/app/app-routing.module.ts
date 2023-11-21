@@ -19,9 +19,9 @@ import { LocacoesComponent } from './components/locacoes/locacoes.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, title: 'DSV - Locadora' },
-  { path: 'assinaturaPlano', component: AssinaturaPlanoComponent, title: 'AssinaturaPlanos' },
   { path: 'avaliacao', component: AvaliacaoComponent, title: 'Avaliações' },
   { path: 'endereco', component: EnderecoComponent, title: 'Endereços' },
+  { path: 'assinaturaPlano', component: AssinaturaPlanoComponent, title: 'AssinaturaPlanos' },
   { path: 'clientes', component: ClientesComponent, title: 'Clientes' },
   { path: 'jogos', component: JogosComponent, title: 'Jogos' },
   { path: 'filmes', component: FilmesComponent, title: 'Filmes' },
