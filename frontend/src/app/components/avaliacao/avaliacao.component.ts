@@ -47,7 +47,7 @@ export class AvaliacaoComponent implements OnInit {
       id: new FormControl(null),
       clienteId: new FormControl(null),
       dataCriacao: new FormControl(new Date()),
-      classificacao: new FormControl(null),
+      classificacao: new FormControl(0),
       comentario: new FormControl(null),
       pedidoId: new FormControl(null),
     })
