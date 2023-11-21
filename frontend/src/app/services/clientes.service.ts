@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Cliente } from '../models/Cliente';
+
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type' : 'application/json'
@@ -12,7 +13,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ClientesService {
-  apiUrl = 'http://localhost:5000/api/Cliente';
+  apiUrl = 'http://localhost:5000/Cliente';
   constructor(private http: HttpClient) { }
   listar(): Observable<Cliente[]> {
     const url = `${this.apiUrl}`;
