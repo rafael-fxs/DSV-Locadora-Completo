@@ -40,16 +40,17 @@ namespace ClienteFuncionario.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> PostCliente(Cliente cliente)
+        [Route("cadastrar")]
+         public async Task<IActionResult> Cadastrar(Cliente cliente)
         {
-            if (ModelState.IsValid)
+            
             {
-                _context.Cliente.Add(cliente);
-                await _context.SaveChangesAsync();
-                return CreatedAtAction(nameof(GetCliente), new { id = cliente.Id }, cliente);
-            }
+                if (cliente==null) return BadRequest("Dados invalidos ");
 
-            return BadRequest(ModelState);
+                await _context.Cliente.AddAsync(cliente);
+                await _context.SaveChangesAsync();
+                return Ok("cliente cadastrado com sucesso");
+            }
         }
 
         [HttpPut("{id}")]

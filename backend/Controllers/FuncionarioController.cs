@@ -39,18 +39,22 @@ namespace ClienteFuncionario.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> PostFuncionario(Funcionario funcionario)
+         [Route("cadastrar")]
+        public async Task<IActionResult> Cadastrar(Funcionario funcionario)
         {
-            if (ModelState.IsValid)
+            
             {
-                _context.Funcionario.Add(funcionario);
+                if (funcionario==null) return BadRequest("Dados invalidos ");
+
+                await _context.Funcionario.AddAsync(funcionario);
                 await _context.SaveChangesAsync();
-                return CreatedAtAction(nameof(GetFuncionario), new { cpf = funcionario.CPF }, funcionario);
+                return Ok("Funcionario cadastrado com sucesso");
             }
 
-            return BadRequest(ModelState);
+            
         }
 
+       
 
         [HttpPut("{cpf}")]
         public async Task<IActionResult> PutFuncionario(string cpf, Funcionario funcionario)

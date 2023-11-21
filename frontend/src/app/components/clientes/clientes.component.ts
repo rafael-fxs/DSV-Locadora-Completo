@@ -29,21 +29,11 @@ export class ClientesComponent implements OnInit {
 
   enviarFormulario(): void {
     const cliente: Cliente = this.formulario.value;
-    const observer: Observer<Cliente> = {
-      next(_result): void {
-        alert('Cliente salvo com sucesso.');
-      },
-      error(_error): void {
-        alert('Erro ao salvar!');
-      },
-      complete(): void {
-      },
+    console.log(cliente)
+    this.clientesService.cadastrar(cliente).subscribe(result => {
+      alert('Cliente inserido com sucesso.');
+      })
+    
     };
 
-    if (cliente.id && cliente.id > 0) {
-      this.clientesService.alterar(cliente).subscribe(observer);
-    } else {
-      this.clientesService.cadastrar(cliente).subscribe(observer);
-    }
   }
-}

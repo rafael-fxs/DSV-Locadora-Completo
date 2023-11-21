@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup  } from '@angular/forms';
-import { Observer } from 'rxjs';
 import { Funcionario } from 'src/app/models/Funcionario'; 
 import { FuncionariosService } from  'src/app/services/funcionarios.service';
 
@@ -28,21 +27,14 @@ export class FuncionariosComponent implements OnInit {
 
   enviarFormulario(): void {
     const funcionario: Funcionario = this.formulario.value;
-    const observer: Observer<Funcionario> = {
-      next(_result): void {
-        alert('Funcionário salvo com sucesso.');
-      },
-      error(_error): void {
-        alert('Erro ao salvar o funcionário!');
-      },
-      complete(): void {},
+    console.log(funcionario)
+    this.funcionariosService.cadastrar(funcionario).subscribe(result => {
+      alert('funcionario inserido com sucesso.');
+      })
+  
     };
 
     
-    if (funcionario.cpf) {
-      this.funcionariosService.alterar(funcionario).subscribe(observer);
-    } else {
-      this.funcionariosService.cadastrar(funcionario).subscribe(observer);
-    }
+    
   }
-}
+

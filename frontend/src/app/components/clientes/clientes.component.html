@@ -4,6 +4,10 @@
       <h6>{{ tituloFormulario }}</h6>
       <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()">
         <div class="form-group">
+          <label>Id</label>
+          <input type="text" class="form-control form-control-sm" formControlName="id" />
+        </div>
+        <div class="form-group">
           <label>CPF</label>
           <input type="text" class="form-control form-control-sm" formControlName="cpf" />
         </div>
